@@ -1,7 +1,7 @@
 # Trauma Center Second Opinon Archipelago
 ## THIS APWORLD IS UNSTABLE! EXPECT ISSUES & RELEASES TO OCCUR IF SOMETHING UNKNOWN GOES WRONG!
 ### Setup Guide
-- Download the latest release.
+- Download the latest [release](https://github.com/Happyhappyism/Trauma-Center-Second-Opinon-Archipelago/releases).
 - Install the APWorld
 - Generate a YAML file using the Options Creator
 - Whenever the seed is generated, FIRST OPEN DOLPHIN AND YOUR LEGAL NTSC COPY OF SECOND OPINION. Not following this can cause issues with the randomizer.
