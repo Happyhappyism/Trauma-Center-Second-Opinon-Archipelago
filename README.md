@@ -1,6 +1,6 @@
 # Trauma Center Second Opinon Archipelago
 ## THIS APWORLD IS UNSTABLE! EXPECT ISSUES & RELEASES TO OCCUR IF SOMETHING UNKNOWN GOES WRONG!
-It's very much still under development but I won't have time to fix any bugs for another couple weeks.
+It's playable but still has some nasty bugs. Very much still under development but I won't have time to fix any bugs for another couple weeks.
 ### Setup Guide
 - Download the latest [release](https://github.com/Happyhappyism/Trauma-Center-Second-Opinon-Archipelago/releases).
 - Install the APWorld
