@@ -129,8 +129,8 @@ def set_rules(world: "TraumaSOWorld"):
             custom_goal_location = world.options.custom_goal_location.value
             logger.warning(f"goal = {custom_goal_location}")
             world.multiworld.completion_condition[world.player] = (
-                lambda state: state.can_reach_location(custom_goal_location, world.player)
-            )
+                lambda state, custom_goal_location=custom_goal_location: all([state.can_reach_location(custom_loc, world.player) for custom_loc in custom_goal_location
+            ]))
         case 1: # Savato
             world.multiworld.completion_condition[world.player] = (
                 lambda state: state.can_reach_location("5-9 Death Awaits All C Rank", world.player) and \

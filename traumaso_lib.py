@@ -383,7 +383,11 @@ def check_goal(ctx:"TraumaSOClient"):
     try:
         match ctx.game_goal:
             case 0: # custom
-                if ctx.goal_loc in ctx.local_checked_locations:
+                custom_goals_reached = 0
+                for custom_loc in ctx.goal_loc:
+                    if custom_loc in ctx.local_checked_locations:
+                        custom_goals_reached += 1
+                if custom_goals_reached >= len(ctx.goal_loc):
                     return True
             case 1: # Savato
                 clear_apid = location_data_table["5-9 Death Awaits All C Rank"].address

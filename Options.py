@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from Options import Choice, Range, OptionGroup, Toggle,FreeText, DefaultOnToggle, Removed, PerGameCommonOptions, OptionSet, StartInventoryPool, DeathLink
+from Options import Choice, Range, OptionGroup, LocationSet, Toggle,FreeText, DefaultOnToggle, Removed, PerGameCommonOptions, OptionSet, StartInventoryPool, DeathLink
 
 class Goal(Choice):
     """Game's Goal"""
@@ -122,13 +122,14 @@ class IncludedTracks(OptionSet):
         "Final Operation", "Exchange Surgeon", "Second Opinion", "Main Menu", "Unused Track"
     }
 
-class LocationLogicCheck(FreeText):
+class LocationLogicCheck(LocationSet):
     """Custom Goal Only
     Enter a check below and reaching that check becomes your goal for the seed. 
     You can use randomization to have a random check become your goal. Eg. 
         '7-5 Sayonara C Rank': 50
         '4-10 Prolonged Struggle B': 50
         '6-8 Vulnerability A Rank': 50"""
+    default = ["4-10 Prolonged Struggle C Rank"]
 
 trauma_so_options_group = [
     OptionGroup("Goal Options", [
