@@ -88,9 +88,11 @@ class TraumaSOWorld(World):
         goal_val = self.options.game_goal.value 
         if goal_val == 1:
             stage_excludes.append("Death Awaits All")
-        if goal_val == 2:
+        elif goal_val == 2:
             stage_excludes.append("Savato")
             stage_excludes.append("Savato Naomi")
+        elif goal_val == 5:
+            stage_excludes.append("Vulnerability")
         start_op_list = opening_stages.copy()
         self.random.shuffle(start_op_list)
         for x in range((self.options.starting_operations.value -1)):

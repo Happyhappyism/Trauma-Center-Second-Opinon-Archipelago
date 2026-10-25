@@ -39,6 +39,8 @@ def get_region_rules(player, world:"TraumaSOWorld"):
         goal_stage = "Death Awaits All"
     elif goal_val == 2:
         goal_stage = "Savato"
+    elif goal_val == 5:
+        goal_stage = "Vulnerability"
         
     for stage, data in stage_data.items():
         entrance_name = f"Menu -> {stage}"
@@ -146,4 +148,9 @@ def set_rules(world: "TraumaSOWorld"):
         case 4: # Angie Hunt
             world.multiworld.completion_condition[world.player] = (
                 lambda state: state.has("Angie's Autograph", world.player, world.options.goal_objective.value)
+            )
+        case 5: # Vulnerability
+            world.multiworld.completion_condition[world.player] = (
+                lambda state: state.can_reach_location("6-8 Vulnerability C Rank", world.player) and \
+                state.has_from_list(stage_list, world.player, world.options.goal_objective.value)
             )

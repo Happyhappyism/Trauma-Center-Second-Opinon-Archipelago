@@ -296,6 +296,9 @@ def check_clear_count(ctx:"TraumaSOClient"):
                     set_wbit(MEM_EPISODE_UNLOCKS+8, 6)
                     set_wbit(MEM_EPISODE_UNLOCKS+8, 13)
                     ctx.goal_unlock = True
+                case 5: # Vulnerability
+                    set_wbit(MEM_EPISODE_UNLOCKS+4, 26)
+                    ctx.goal_unlock = True
     except Exception as e:
         logger.critical(f"Error processing items: {e}\n{traceback.format_exc()}")
 
@@ -386,7 +389,7 @@ def check_goal(ctx:"TraumaSOClient"):
                 clear_apid = location_data_table["5-9 Death Awaits All C Rank"].address
                 if clear_apid in ctx.local_checked_locations:
                     return True
-            case 2: # Savato
+            case 2: # Savato X
                 clear_apid_1 = location_data_table["8-7 Savato C Rank"].address
                 clear_apid_2 = location_data_table["8-7 Savato Naomi C Rank"].address
                 if clear_apid_1 in ctx.local_checked_locations or clear_apid_2 in ctx.local_checked_locations:
@@ -399,6 +402,10 @@ def check_goal(ctx:"TraumaSOClient"):
                 offset = RECV_ADR + 0x10
                 autographs_have = dme.read_word(offset)
                 if autographs_have >= ctx.goal_objective:
+                    return True
+            case 5: # Vulnerability
+                clear_apid = location_data_table["6-8 Vulnerability C Rank"].address
+                if clear_apid in ctx.local_checked_locations:
                     return True
         return False
     except Exception as e:

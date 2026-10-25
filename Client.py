@@ -342,7 +342,7 @@ async def game_watcher(ctx: TraumaSOClient):
                 ctx.local_checked_locations = locs_to_send
                 await ctx.send_msgs([{"cmd": "LocationChecks", "locations": list(locs_to_send)}])
 
-            if (ctx.game_goal == 1 or ctx.game_goal == 2) and (ctx.goal_unlock == False): # For Savato Goals give the op when clear condition met
+            if (ctx.game_goal == 1 or ctx.game_goal == 2 or ctx.game_goal == 5) and (ctx.goal_unlock == False): # For Savato Goals give the op when clear condition met
                 check_clear_count(ctx)
 
             # Handle game clear

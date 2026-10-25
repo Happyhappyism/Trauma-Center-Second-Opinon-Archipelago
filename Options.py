@@ -5,6 +5,7 @@ class Goal(Choice):
     """Game's Goal"""
     display_name = "Goal"
     option_savato = 1
+    option_vulnerability = 5
     option_savatoX = 2
     option_custom = 0
     option_clear_count = 3
