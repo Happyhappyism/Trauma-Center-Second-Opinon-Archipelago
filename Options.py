@@ -72,7 +72,7 @@ class MaxRank(Choice):
 class includeStoryEpisodes(Toggle):
     """If enabled will include the non operation story episodes, basically free locations"""
 
-class MaxCapter(Range):
+class MaxChapter(Range):
     """Will determine which chapters will be included as locations
     If Savato goal is set then this must be at least 5
     7 will include Naomi chapters
@@ -134,7 +134,7 @@ trauma_so_options_group = [
         Goal,
         StartingOperations,
         NeededClears,
-        MaxCapter,
+        MaxChapter,
         LocationLogicCheck,
     ]),
     OptionGroup("Gameplay Options", [
@@ -166,7 +166,7 @@ class TraumaSOOptions(PerGameCommonOptions):
     max_rank: MaxRank
     chainsanity: Chainsanity
     #include_story_episodes: includeStoryEpisodes
-    max_chapter: MaxCapter
+    max_chapter: MaxChapter
     custom_goal_location: LocationLogicCheck
     randomize_operation_music: RandomMusic
     included_random_music: IncludedTracks

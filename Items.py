@@ -116,7 +116,8 @@ item_data_table.update({name: TraumaSOItemData(
     item_type = "stage unlock",
     id = data.id,
 )
-for name, data in stage_data.items() if data.goal_operation == False})
+for name, data in stage_data.items() #if data.goal_operation == False
+})
 durability_items = [name for name, data in item_data_table.items() if data.item_type == "durability"]
 
 
